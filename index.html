@@ -1,0 +1,29 @@
+<html>
+
+
+<head>
+    <!-- include A-Frame obviously -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!-- import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body>
+    <a-scene embedded="" vr-mode-ui="enabled: false;"
+             arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;" inspector=""
+             keyboard-shortcuts="" screenshot="" device-orientation-permission-ui="">
+        <a-assets>
+            <a-asset-item id="logo-gltf" src="models\CarteQR.glb"></a-asset-item>
+        </a-assets>
+        <a-marker size="1" type='barcode' value='5' arjs-anchor smooth="true" smoothCount="2" smoothTolerance="0.001" smoothThreshold="1">
+            <a-entity gltf-model="#logo-gltf" position="0 0 0" rotation="0 45 0" scale="0.03 0.03 0.03">
+            </a-entity>
+        </a-marker>
+    <a-entity camera>
+        </entity>
+        <a-entity light="" data-aframe-default-light="" aframe-injected=""></a-entity>
+        <a-entity light="" position="" data-aframe-default-light="" aframe-injected=""></a-entity>
+    </a-scene>
+</body>
+
+</html>
